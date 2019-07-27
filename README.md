@@ -18,19 +18,15 @@ wifi_pass() {
 
 ## [Homebrew](https://brew.sh/)
 
-### Essential package manager for macOS.
+> Essential package manager for macOS.
 
-Allows you to run `brew cask install <name of the app>` to install nearly every app you need.
+Allows you to run `brew cask install <app name>` to install nearly every app you need.
 
 #### Install Homebrew
 
-/usr/bin/ruby -e "$(curl -fsSL [https://raw.githubusercontent.com/Homebrew/install/master/install)"](https://raw.githubusercontent.com/Homebrew/install/master/install)")/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-
-
-
-
-
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 ---
 
