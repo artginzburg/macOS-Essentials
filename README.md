@@ -13,36 +13,73 @@ Most of them are the newest and most convenient applications, replacing the alre
 
 ![Maccy.app](https://github.com/p0deje/Maccy/raw/master/Maccy/Assets.xcassets/Demo.dataset/demo.gif)
 
-## Functions
+- It has wonderful <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>C</kbd> shortcut, but I changed it to <kbd>⌥</kbd>+<kbd>⇧</kbd>+<kbd>C</kbd> because the initial option is used in many other applications.
+
+## Command Line tools
+
+### [Homebrew](https://brew.sh/)
+
+> Essential package manager for macOS.
+
+Allows you to run `brew install <package>` and `brew cask install <app>` to install nearly everything you need.
+
+#### Install Homebrew
+
+```powershell
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+### Packages
+
+> Remember, just `brew install <package>` — 3 seconds for the magic to appear!
+
+- [youtube-dl](https://github.com/rg3/youtube-dl) - Download media from YouTube and other video sites.
+
+- [qrencode](https://fukuchi.org/works/qrencode/index.html.en) - Accepts a string or a list of data chunks then encodes in a QR Code symbol as a bitmap array.
+
+### Functions
 
 > An assorted collection of useful macOS Bash-style functions.
 
-### Get current Wi-Fi password
+#### Get current Wi-Fi password
 
-    run `wifi_pass`, maybe adding ` copy` to get the result to your clipboard
+    run `wifi_pass`, maybe adding ` -c` to get the result to your clipboard
 
 ```powershell
 ssid() {
     /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'
 }
-wifi_pass() {
-    if [ "$1" == "copy" ]
-    then    
-        wifi_pass | tr -d '\n' | pbcopy
-    else
-        security find-generic-password -D "AirPort network password" -a "$(ssid)" -gw
-    fi
+wifi-pass() {
+  local ssid=$(ssid)
+  if [ "$1" != "" ]; then
+    case $1 in
+      -c | --copy )
+        if [ "$2" != "" ]; then
+          wifi-pass $2 | tr -d '\n' | pbcopy
+        else
+          wifi-pass -c $ssid
+        fi
+      ;;
+      -qr | --qrencode )
+        if [ "$2" != "" ]; then
+          qrencode -o ~/Desktop/$2.png -s 20 -m 3 "WIFI:S:$2;T:WPA;P:$(wifi-pass $2);;"
+        else
+          wifi-pass -qr $ssid
+        fi
+      ;;
+      * )
+        security find-generic-password -D "AirPort network password" -a "$1" -gw
+    esac
+  else
+    wifi-pass $ssid
+  fi
 }
 ```
 
-With [Homebrew](#Homebrew) installed, you can extend `wifi_pass` function to make a QR code that can be scanned using mobile phone to join your network:
-
-Just `brew install qrencode` and
+With [qrencode](#Packages) package installed, you can extend `wifi-pass` function to make a QR code that can be scanned using mobile phone to join your network:
 
 ```powershell
-wifi_qr() {
-    qrencode -o ~/Desktop/wifi.png -s 20 -m 3 "WIFI:S:$(ssid);T:WPA;P:$(wifi_pass);;"
-}
+wifi-pass -qr <ssid>
 ```
 
 ### Profiling functions
@@ -56,18 +93,6 @@ edit() {
 reload() {
     . .bash_profile
 }
-```
-
-## [Homebrew](https://brew.sh/)
-
-> Essential package manager for macOS.
-
-Allows you to run `brew cask install <app name>` to install nearly every app you need.
-
-#### Install Homebrew
-
-```powershell
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ## Printing
