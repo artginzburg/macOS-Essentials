@@ -6,7 +6,7 @@
 
 > An assorted collection of useful macOS Bash-style functions.
 
-#### Get current Wi-Fi password
+### Get current Wi-Fi password
 
 ```powershell
 ssid() {
@@ -36,7 +36,7 @@ wifi_qr() {
 }
 ```
 
-#### Profiling functions
+### Profiling functions
 
 > Use this to quickly enable new settings you get on the web
 
