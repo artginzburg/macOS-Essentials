@@ -185,50 +185,17 @@ Allows you to run `brew install <package>` and `brew cask install <app>` to inst
 
 - [qrencode](https://fukuchi.org/works/qrencode/index.html.en) - Accepts a string or a list of data chunks then encodes in a QR Code symbol as a bitmap array.
 
-### Functions
+- [wifi-pass](https://github.com/DaFuqtor/wifi-pass) - QR encode, copy or just get the password of current Wi-Fi connection
 
-> An assorted collection of useful macOS Bash-style functions.
-
-#### Get current Wi-Fi password
-
-    run `wifi_pass`, maybe adding ` -c` to get the result to your clipboard
-
-```powershell
-ssid() {
-    /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'
-}
-wifi-pass() {
-  local ssid=$(ssid)
-  if [ "$1" != "" ]; then
-    case $1 in
-      -c | --copy )
-        if [ "$2" != "" ]; then
-          wifi-pass $2 | tr -d '\n' | pbcopy
-        else
-          wifi-pass -c $ssid
-        fi
-      ;;
-      -qr | --qrencode )
-        if [ "$2" != "" ]; then
-          qrencode -o ~/Desktop/$2.png -s 20 -m 3 "WIFI:S:$2;T:WPA;P:$(wifi-pass $2);;"
-        else
-          wifi-pass -qr $ssid
-        fi
-      ;;
-      * )
-        security find-generic-password -D "AirPort network password" -a "$1" -gw
-    esac
-  else
-    wifi-pass $ssid
-  fi
-}
-```
-
-With [qrencode](#packages) package installed, you can extend the `wifi-pass` function to make a QR code that can be scanned using a mobile phone to join your network:
-
-```powershell
-wifi-pass -qr <ssid>
-```
+    ```powershell
+    $ wifi-pass
+      Keychain prompt --> Get password for "fqtr_iPhoneSE"
+    bigBlackCharge129
+    $ wifi-pass -c Bobrokot
+      Keychain prompt --> Copy password for "Bobrokot"
+    Password copied to clipboard
+    ```
+  - With [qrencode](#packages) package installed, you can extend the `wifi-pass` tool to make a QR code that can be scanned using a mobile phone to join your network
 
 ### Profiling functions
 
