@@ -1,6 +1,17 @@
 <h1 align="center">macOS Essentials</h1>
 <p align="center">Apps and sets that are nice to use on our beatiful system of choice.</p>
 
+##### Contents
+
+- [Applications](#applications)
+  - [Productivity](#productivity)
+  - [Code](#code)
+  - [Social](#social)
+  - [Browsers](#browsers)
+    - [Safari Extensions](#safari-extensions)
+- [Command Line tools](#command-line-tools)
+  - [Packages](#packages)
+
 ## Applications
 
 Most of them are the newest and most convenient applications, replacing the already outdated ones.
@@ -14,6 +25,45 @@ Most of them are the newest and most convenient applications, replacing the alre
 ![Maccy.app](https://github.com/p0deje/Maccy/raw/master/Maccy/Assets.xcassets/Demo.dataset/demo.gif)
 
 - It has wonderful <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>C</kbd> shortcut, but I changed it to <kbd>⌥</kbd>+<kbd>⇧</kbd>+<kbd>C</kbd> because the initial option is used in many other applications.
+
+#### [Folx](https://mac.eltima.com/torrent-client.html) - Torrent Client
+
+- An excellent minimalistic torrent downloader. Makes downloading torrent files and creating torrents for various trackers extremely easy.
+
+### Code
+
+#### [VS Code](https://github.com/Microsoft/vscode) — Main code editor
+
+- Easy-to-use with large projects.
+- The best editor with many extensions that I use to write code in.
+- I like to use VSC SynthWave '84 theme. Here is how it looks:
+
+![VSC](img/vsc.png)
+
+#### [Sublime Text](https://www.sublimetext.com) - Additional Text Editor
+
+- Use this editor in addition to VSC for its blazing fast speed of opening files.
+- I use it just to quickly edit configs and markdown files.
+- Built-in Monokai theme (dark, yea).
+
+#### [GitHub Desktop](https://desktop.github.com) - Git client
+
+- Convenient version control.
+- Has a wonderful dark theme.
+
+### Social
+
+#### [Telegram](https://desktop.telegram.org/) - Fastest Messenger
+> All other messengers just suck.
+
+- Native and clean interface.
+- Stickers.
+- ???
+
+#### [Spark](https://sparkmailapp.com/) - Email client
+
+- Cool categorizaton of emails.
+- Just. looks. nice. (And is extremely fast)
 
 ### Browsers
 
@@ -124,7 +174,13 @@ reload() {
 }
 ```
 
-## Printing
+### Highlight Effect to Stacks View in macOS
+
+```powershell
+defaults write com.apple.dock mouse-over-hilite-stack -boolean yes; killall Dock
+```
+
+### Printing
 
 #### Clear Print Queue
 
@@ -138,7 +194,7 @@ cancel -a -
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 ```
 
-## System
+### System
 
 ##### Set Login Window text
 
