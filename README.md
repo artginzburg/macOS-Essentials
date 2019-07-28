@@ -15,6 +15,26 @@ Most of them are the newest and most convenient applications, replacing the alre
 
 - It has wonderful <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>C</kbd> shortcut, but I changed it to <kbd>⌥</kbd>+<kbd>⇧</kbd>+<kbd>C</kbd> because the initial option is used in many other applications.
 
+### Browsers
+
+#### [Safari](https://www.apple.com/lae/safari/)
+
+- It's just native to macOS, which means incredible speed and the lowest battery waste.
+
+##### Safari Extensions
+
+- [OverPicture](https://apps.apple.com/us/app/overpicture-for-safari/id1188020834) - Allows you to play any web video in Picture-In-Picture mode. It also has a nice <kbd>P</kbd> shortcut and the custom button in popular players like YouTube.
+- [AdGuard](https://adguard.com/en/adguard-mac/overview.html) - Ad content blocker based on [Safari native content blocking API's](https://developer.apple.com/library/content/documentation/Extensions/Conceptual/ContentBlockingRules/Introduction/Introduction.html).
+- [Cascadea](https://cascadea.app) - Custom styles. Allows importing of themes from Stylish, which has really wide community. I use it to create or install dark themes for websites without a dark mode option. 
+- [Dark Reader](https://darkreader.org/safari/) - For websites that don't have a nice Stylish theme, I use Dark Reader to let my eyes enjoy the dark mode.
+- [Ghounter](https://apps.apple.com/us/app/ghounter/id1438633677) - Displays the downloads count on any public Releases page in GitHub.
+- [AutoPagerize](https://safari-extensions.apple.com/details/?id=net.autopagerize.autppagerizeforsafari-XH6FQ533G6) - Auto-loads paginated websites (e.g. Google Search).
+
+#### [Google Chrome](https://www.google.com/chrome/)
+
+- Indispensably good Dev tools for web development.
+- Overtakes Safari in the number of extensions.
+
 ## Command Line tools
 
 ### [Homebrew](https://brew.sh/)
