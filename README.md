@@ -37,12 +37,12 @@ Allows you to run `brew install <package>` and `brew cask install <app>` to inst
 
 - [thefuck](https://github.com/nvbn/thefuck) - Corrects errors in previous console commands.
 
-  - ```powershell
-  $ puthon
-  No command 'puthon' found
-  $ fuck
-  Python 3.4.2 (default, Oct  8 2014, 13:08:17)
-  ```
+    ```powershell
+    $ puthon
+    No command 'puthon' found
+    $ fuck
+    Python 3.4.2 (default, Oct  8 2014, 13:08:17)
+    ```
 
 - [qrencode](https://fukuchi.org/works/qrencode/index.html.en) - Accepts a string or a list of data chunks then encodes in a QR Code symbol as a bitmap array.
 
