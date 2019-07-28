@@ -1,6 +1,17 @@
 <h1 align="center">macOS Essentials</h1>
-
 <p align="center">Apps and sets that are nice to use on our beatiful system of choice.</p>
+
+## Applications
+
+Most of them are the newest and most convenient applications, replacing the already outdated ones.
+
+### Productivity
+
+#### [Maccy](https://github.com/p0deje/Maccy) - clipboard manager
+
+- Keeps the history of what you copy and lets you easily navigate, search and use previous clipboard contents.
+
+![Maccy.app](https://github.com/p0deje/Maccy/raw/master/Maccy/Assets.xcassets/Demo.dataset/demo.gif)
 
 ## Functions
 
@@ -12,19 +23,17 @@
 
 ```powershell
 ssid() {
-	/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'
+    /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'
 }
 wifi_pass() {
-	if [ "$1" == "copy" ]
-	then	
-		wifi_pass | tr -d '\n' | pbcopy
-	else
-		security find-generic-password -D "AirPort network password" -a "$(ssid)" -gw
-	fi
+    if [ "$1" == "copy" ]
+    then    
+        wifi_pass | tr -d '\n' | pbcopy
+    else
+        security find-generic-password -D "AirPort network password" -a "$(ssid)" -gw
+    fi
 }
 ```
-
-
 
 With [Homebrew](#Homebrew) installed, you can extend `wifi_pass` function to make a QR code that can be scanned using mobile phone to join your network:
 
@@ -32,7 +41,7 @@ Just `brew install qrencode` and
 
 ```powershell
 wifi_qr() {
-    qrencode -o Desktop/wifi.png -s 20 -m 3 "WIFI:S:$(ssid);T:WPA;P:$(wifi_pass);;"
+    qrencode -o ~/Desktop/wifi.png -s 20 -m 3 "WIFI:S:$(ssid);T:WPA;P:$(wifi_pass);;"
 }
 ```
 
@@ -49,8 +58,6 @@ reload() {
 }
 ```
 
-
-
 ## [Homebrew](https://brew.sh/)
 
 > Essential package manager for macOS.
@@ -62,8 +69,6 @@ Allows you to run `brew cask install <app name>` to install nearly every app you
 ```powershell
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-
-
 
 ## Printing
 
@@ -79,8 +84,6 @@ cancel -a -
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 ```
 
-
-
 ## System
 
 ##### Set Login Window text
@@ -88,8 +91,6 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 ```powershell
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Can't touch this..."
 ```
-
-
 
 ---
 
