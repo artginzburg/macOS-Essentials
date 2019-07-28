@@ -21,6 +21,18 @@ wifi_pass() {
 
 Now you could run `wifi_pass`, maybe adding ` copy` to get the result to your clipboard
 
+
+
+With [Homebrew](#Homebrew) installed, you can extend `wifi_pass` function to make a QR code that can be scanned using mobile phone to join your network:
+
+Just `brew install qrencode` and
+
+```powershell
+wifi_qr() {
+    qrencode -o Desktop/wifi.png -s 20 -m 3 "WIFI:S:$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}');T:WPA;P:$(wifi_pass);;"
+}
+```
+
 #### Profiling functions
 
 > Use this to quickly enable new settings you get on the web
