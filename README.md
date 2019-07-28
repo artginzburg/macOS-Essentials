@@ -8,6 +8,8 @@
 
 ### Get current Wi-Fi password
 
+    run `wifi_pass`, maybe adding ` copy` to get the result to your clipboard
+
 ```powershell
 ssid() {
 	/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'
@@ -21,8 +23,6 @@ wifi_pass() {
 	fi
 }
 ```
-
-Now you could run `wifi_pass`, maybe adding ` copy` to get the result to your clipboard
 
 
 
