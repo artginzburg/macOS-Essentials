@@ -35,6 +35,15 @@ Allows you to run `brew install <package>` and `brew cask install <app>` to inst
 
 - [youtube-dl](https://github.com/rg3/youtube-dl) - Download media from YouTube and other video sites.
 
+- [thefuck](https://github.com/nvbn/thefuck) - Corrects errors in previous console commands.
+
+  - ```powershell
+  $ puthon
+  No command 'puthon' found
+  $ fuck
+  Python 3.4.2 (default, Oct  8 2014, 13:08:17)
+  ```
+
 - [qrencode](https://fukuchi.org/works/qrencode/index.html.en) - Accepts a string or a list of data chunks then encodes in a QR Code symbol as a bitmap array.
 
 ### Functions
@@ -76,7 +85,7 @@ wifi-pass() {
 }
 ```
 
-With [qrencode](#Packages) package installed, you can extend `wifi-pass` function to make a QR code that can be scanned using mobile phone to join your network:
+With [qrencode](#Packages) package installed, you can extend the `wifi-pass` function to make a QR code that can be scanned using a mobile phone to join your network:
 
 ```powershell
 wifi-pass -qr <ssid>
