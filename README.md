@@ -9,6 +9,10 @@
   - [Social](#social)
   - [Browsers](#browsers)
     - [Safari Extensions](#safari-extensions)
+  - [Music](#music)
+  - [Video](#video)
+  - [Images](#images)
+  - [Utilities](#utilties)
 - [Command Line tools](#command-line-tools)
   - [Packages](#packages)
 
@@ -29,6 +33,13 @@ Most of them are the newest and most convenient applications, replacing the alre
 #### [Folx](https://mac.eltima.com/torrent-client.html) - Torrent Client
 
 - An excellent minimalistic torrent downloader. Makes downloading torrent files and creating torrents for various trackers extremely easy.
+
+#### [Lungo](https://sindresorhus.com/lungo) - A menu bar app that keeps your Mac awake.
+> Modern alternative to [Caffeine](https://www.macupdate.com/app/mac/24120/caffeine)
+
+- Many various preferences.
+- Scriptable.
+- Not so heavy like [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704).
 
 ### Code
 
@@ -65,6 +76,10 @@ Most of them are the newest and most convenient applications, replacing the alre
 - Cool categorizaton of emails.
 - Just. looks. nice. (And is extremely fast)
 
+#### [Flume](https://flumeapp.com) - Instagram client
+
+- Allows to do everything we do in Instagram on mobiles.
+
 ### Browsers
 
 #### [Safari](https://www.apple.com/lae/safari/)
@@ -84,6 +99,54 @@ Most of them are the newest and most convenient applications, replacing the alre
 
 - Indispensably good Dev tools for web development.
 - Overtakes Safari in the number of extensions.
+
+### Music
+
+#### [Shazam](https://apps.apple.com/us/app/shazam/id897118787) - Menu bar that discovers music, video & lyrics
+> Siri already has built-in Shazam, but it sucks.
+
+- Old known app now on desktop.
+- One click shazaming.
+- Configurable keyboard shortcut.
+
+#### [NepTunes](https://micropixels.software/neptunes) - iTunes and Spotify controller
+
+- All media actions from beautiful artwork on your Desktop.
+- It can replace default track changing notfication.
+
+### Video
+
+#### [Beamer](https://beamer-app.com) - Stream to Apple TV and Chromecast
+
+- Super-minimalistic UI.
+- Fast connection.
+- All common video formats. Never had any troubles.
+- All popular subtitle formats are also supported.
+
+#### [IINA](https://github.com/lhc70000/iina) - Video player
+
+- Based on mpv.
+- It's like VLC, but fast, modern and native.
+
+### Images
+
+#### [Photoshop](https://www.adobe.com/products/photoshop.html) - Edit photos
+> My second hobby.
+
+- Doesn't need to be present, yea?
+
+#### [ImageOptim](https://imageoptim.com/mac) - better Save for Web
+
+- Reduces image file sizes.
+- Removes invisible junk (comments, thumbnails and other metadata).
+- Has a service which is easily accessible from RMB click on image in Finder.
+
+### Utilities
+
+#### [AppCleaner](https://freemacsoft.net/appcleaner/) - Fully uninstall unwanted apps
+
+- Finds all the files using space of your Hard Drive unnecessarily after deleting the app to which these files belong.
+- Auto-asks to remove residual files when you delete app from Applications folder.
 
 ## Command Line tools
 
@@ -155,7 +218,7 @@ wifi-pass() {
 }
 ```
 
-With [qrencode](#Packages) package installed, you can extend the `wifi-pass` function to make a QR code that can be scanned using a mobile phone to join your network:
+With [qrencode](#packages) package installed, you can extend the `wifi-pass` function to make a QR code that can be scanned using a mobile phone to join your network:
 
 ```powershell
 wifi-pass -qr <ssid>
