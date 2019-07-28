@@ -41,6 +41,11 @@ Most of them are the newest and most convenient applications, replacing the alre
 - Scriptable.
 - Not so heavy like [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704).
 
+#### [LocalSwitch](https://github.com/DaFuqtor/LocalSwitch) - Menu bar interface for `apachectl`
+
+- Allows you to quickly stop, run or restart native macOS server. 
+- I'm just getting annoyed of running `sudo apachectl stop` and `sudo apachectl start` every time I need to manage my local server.
+
 ### Code
 
 #### [VS Code](https://github.com/Microsoft/vscode) — Main code editor
@@ -78,7 +83,7 @@ Most of them are the newest and most convenient applications, replacing the alre
 
 #### [Flume](https://flumeapp.com) - Instagram client
 
-- Allows to do everything we do in Instagram on mobiles.
+- Allows us to do everything we do in Instagram on mobiles.
 
 ### Music
 
