@@ -182,6 +182,8 @@ Allows you to run `brew install <package>` and `brew cask install <app>` to inst
     $ fuck
     Python 3.4.2 (default, Oct  8 2014, 13:08:17)
     ```
+    
+  - I also use russian keyboard layout so added `alias агсл='fuck'` to my `.bash_profile`
 
 - [qrencode](https://fukuchi.org/works/qrencode/index.html.en) - Accepts a string or a list of data chunks then encodes in a QR Code symbol as a bitmap array.
 
