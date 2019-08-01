@@ -26,8 +26,6 @@ Most of them are the newest and most convenient applications, replacing the alre
 
 - Keeps the history of what you copy and lets you easily navigate, search and use previous clipboard contents.
 
-![Maccy.app](https://github.com/p0deje/Maccy/raw/master/Maccy/Assets.xcassets/Demo.dataset/demo.gif)
-
 - It has wonderful <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>C</kbd> shortcut, but I changed it to <kbd>⌥</kbd>+<kbd>⇧</kbd>+<kbd>C</kbd> because the initial option is used in many other applications.
 
 #### [Folx](https://mac.eltima.com/torrent-client.html) - Torrent Client
@@ -234,7 +232,15 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 ### System
 
-##### Set Login Window text
+#### Use sudo with Touch ID
+
+edit `/etc/pam.d/sudo` and add the following line to the top:
+
+```
+auth sufficient pam_tid.so
+```
+
+#### Set Login Window text
 
 ```powershell
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Can't touch this..."
