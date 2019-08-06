@@ -197,6 +197,8 @@ Allows you to run `brew install <package>` and `brew cask install <app>` to inst
     ```
   - With [qrencode](#packages) package installed, you can extend the `wifi-pass` tool to make a QR code that can be scanned using a mobile phone to join your network
 
+- [lyrics-cli](https://github.com/leejefon/lyrics-cli) - Search song lyrics on command line
+
 ### Profiling functions
 
 > Use this to quickly enable new settings you get on the web
@@ -230,7 +232,7 @@ cancel -a -
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 ```
 
-### System
+## System
 
 #### Use sudo with Touch ID
 
@@ -245,6 +247,71 @@ auth sufficient pam_tid.so
 ```powershell
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Can't touch this..."
 ```
+
+### What I've done with Dock
+
+#### Dock autohiding
+
+```powershell
+defaults write com.apple.Dock autohide 1
+```
+
+#### Dock on the left side
+
+```powershell
+defaults write com.apple.Dock orientation left
+```
+
+#### Dock scroll-to-open
+
+```powershell
+defaults write com.apple.Dock scroll-to-open 1
+```
+
+#### Speeding up Dock showing & hiding
+
+```powershell
+defaults write com.apple.Dock autohide-time-modifier -float 0.7 && killall Dock
+```
+
+```powershell
+defaults write com.apple.Dock autohide-delay -float 0.05
+```
+
+#### Speeding up playback when resizing windows (Apple applications)
+
+```powershell
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.05
+```
+
+#### Speeding up Quick Look animation
+
+```powershell
+defaults write -g QLPanelAnimationDuration -float 0.1
+```
+
+### Safari
+
+#### Disable default page rendering delay
+
+> dfq is that supposed to mean? Entered this just in case.
+
+```powershell
+defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.25
+```
+
+#### Faster keyboard actuation
+
+> Still not sure about the way it's working (and if it's even working)
+
+```powershell
+defaults write NSGlobalDomain KeyRepeat -int 0
+```
+
+
+##### To return initial settings:
+
+just replace `defaults write` by `defaults delete`
 
 ---
 
