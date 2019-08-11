@@ -12,7 +12,8 @@
   - [Images](#images)
   - [Browsers](#browsers)
     - [Safari Extensions](#safari-extensions)
-  - [Utilities](#utilties)
+  - [Utilities](#utilities)
+  - [Interesting, but not essential](#interesting-but-not-essential)
 - [Command Line tools](#command-line-tools)
   - [Packages](#packages)
 
@@ -151,6 +152,10 @@ Most of them are the newest and most convenient applications, replacing the alre
 
 - Finds all the files using space of your Hard Drive unnecessarily after deleting the app to which these files belong.
 - Auto-asks to remove residual files when you delete app from Applications folder.
+
+### Interesting, but not essential
+
+#### [WebToLayers](//neededapps.com/webtolayers/) and [ScreenToLayers](//neededapps.com/screentolayers/) - Convert screens and web pages to layered Photoshop documents
 
 ## Command Line tools
 
