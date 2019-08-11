@@ -205,6 +205,8 @@ Allows you to run `brew install <package>` and `brew cask install <app>` to inst
 
 - [lyrics-cli](https://github.com/leejefon/lyrics-cli) - Search song lyrics on command line
 
+- [mackup](//github.com/lra/mackup) - Wonderful configuration and preferences backuper
+
 ### Profiling functions
 
 > Use this to quickly enable new settings you get on the web
