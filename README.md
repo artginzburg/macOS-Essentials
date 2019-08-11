@@ -16,6 +16,7 @@
   - [Interesting, but not essential](#interesting-but-not-essential)
 - [Command Line tools](#command-line-tools)
   - [Packages](#packages)
+- [Quick Tips](#quick-tips)
 
 ## Applications
 
@@ -317,6 +318,24 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 ##### To return initial settings:
 
 just replace `defaults write` by `defaults delete`
+
+## Quick Tips
+
+### Hide any Status Bar Icon
+> without Bartender
+
+```
+defaults write <bundle_identifier> "NSStatusItem Visible Item-0" 0 && killall <app_name>
+```
+
+- I already have hidden:
+  - Spotlight Search — because it has a shortcut and needs keyboard anyway
+  - Magnet — I don't need to use it often, so it's comfortable to drag windows to the corners for Magnet to stick them
+
+### Shorthand searching in Spotlight
+> Abbreviations
+
+- If you have an app called e.g. Visual Studio Code, typing its abbreviation — "vsc" — is sufficient for Spotlight to direct you to it. Same with camelCased app names.
 
 ---
 
