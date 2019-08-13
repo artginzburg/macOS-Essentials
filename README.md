@@ -339,6 +339,12 @@ defaults write <bundle_identifier> "NSStatusItem Visible Item-0" 0 && killall <a
 
 - If you have an app called e.g. Visual Studio Code, typing its abbreviation — "vsc" — is sufficient for Spotlight to direct you to it. Same with camelCased app names.
 
+### Allow last installed app from unidentified developer
+
+```powershell
+spctl --add /Applications/$(ls -lt /Applications/ | head -2 | grep .app | rev | cut -d' ' -f1 | rev)
+```
+
 ---
 
 If you're still wondering dfq for I created this repo — I want to be able to fuck my MacBook on the floor right now, buy a new one and return all my settings, a little remembering how and why they are needed.
