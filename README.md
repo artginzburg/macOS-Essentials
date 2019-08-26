@@ -207,23 +207,23 @@ Allows you to run `brew install <package>` and `brew cask install <app>` to inst
 
 - [mackup](//github.com/lra/mackup) - Wonderful configuration and preferences backuper
 
+- [barhide](//github.com/DaFuqtor/barhide) - Hide unwanted icons from your menu bar
+I already have hidden:
+  - Spotlight Search — because it has a shortcut and needs keyboard anyway
+  - Magnet — don't need to use it often, so it's comfortable to drag windows to the corners for Magnet to stick them
+  - Notification Center (SystemUIServer) — prefer swiping left from the right edge with two fingers
+
 ### Profiling functions
 
 > Use this to quickly enable new settings you get on the web
 
 ```bash
-edit() {
+profile() {
     open .bash_profile
 }
 reload() {
     . .bash_profile
 }
-```
-
-### Highlight Effect to Stacks View in macOS
-
-```powershell
-defaults write com.apple.dock mouse-over-hilite-stack -boolean yes; killall Dock
 ```
 
 ### Printing
@@ -258,32 +258,38 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "
 
 ### What I've done with Dock
 
+### Highlight Effect to Stacks View in macOS
+
+```powershell
+defaults write com.apple.dock mouse-over-hilite-stack -int 1 && killall Dock
+```
+
 #### Dock autohiding
 
 ```powershell
-defaults write com.apple.Dock autohide 1
+defaults write com.apple.dock autohide -int 1 && killall Dock
 ```
 
 #### Dock on the left side
 
 ```powershell
-defaults write com.apple.Dock orientation left
+defaults write com.apple.dock orientation left && killall Dock
 ```
 
 #### Dock scroll-to-open
 
 ```powershell
-defaults write com.apple.Dock scroll-to-open 1
+defaults write com.apple.dock scroll-to-open -int 1 && killall Dock
 ```
 
 #### Speeding up Dock showing & hiding
 
 ```powershell
-defaults write com.apple.Dock autohide-time-modifier -float 0.7 && killall Dock
+defaults write com.apple.dock autohide-time-modifier -float 0.7 && killall Dock
 ```
 
 ```powershell
-defaults write com.apple.Dock autohide-delay -float 0.05
+defaults write com.apple.dock autohide-delay -float 0.05 && killall Dock
 ```
 
 #### Speeding up playback when resizing windows (Apple applications)
@@ -323,17 +329,6 @@ just replace `defaults write` by `defaults delete`
 
 ## Quick Tips
 
-### Hide any Status Bar Icon
-> without Bartender
-
-```
-defaults write <bundle_identifier> "NSStatusItem Visible Item-0" 0 && killall <app_name>
-```
-
-- I already have hidden:
-  - Spotlight Search — because it has a shortcut and needs keyboard anyway
-  - Magnet — I don't need to use it often, so it's comfortable to drag windows to the corners for Magnet to stick them
-
 ### Shorthand searching in Spotlight
 > Abbreviations
 
@@ -342,7 +337,7 @@ defaults write <bundle_identifier> "NSStatusItem Visible Item-0" 0 && killall <a
 ### Allow last installed app from unidentified developer
 
 ```powershell
-spctl --add /Applications/$(ls -lt /Applications/ | head -2 | grep .app | rev | cut -d' ' -f1 | rev)
+sudo spctl --add /Applications/$(ls -lt /Applications/ | head -2 | grep .app | cut -d':' -f2 | sed 's/[0-9]*//g' | sed -e 's/^[ \t]*//')
 ```
 
 ---
