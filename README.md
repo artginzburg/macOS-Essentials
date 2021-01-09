@@ -120,11 +120,11 @@ Most of them are the newest and most convenient applications, replacing the alre
 
 - Doesn't need to be present, yea?
 
-#### [ImageOptim](https://imageoptim.com/mac) - better Save for Web
+#### [Aerate](https://apps.apple.com/us/app/aerate/id1480882940) - better Save for Web
 
 - Reduces image file sizes.
 - Removes invisible junk (comments, thumbnails and other metadata).
-- Has a service which is easily accessible from RMB click on image in Finder.
+<!-- - Has a service which is easily accessible from RMB click on image in Finder. -->
 
 ### Browsers
 
