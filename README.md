@@ -250,6 +250,12 @@ edit `/etc/pam.d/sudo` and add the following line to the top:
 auth sufficient pam_tid.so
 ```
 
+you may also use the following command to do so:
+
+```
+sudo sh -c -- 'filename="sudo" && file="/etc/pam.d/$filename" && echo "auth sufficient pam_tid.so" | cat - $file > /tmp/$filename.tmp && mv /tmp/$filename.tmp $file'
+```
+
 #### Set Login Window text
 
 ```powershell
